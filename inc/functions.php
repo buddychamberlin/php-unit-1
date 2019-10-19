@@ -11,46 +11,51 @@ $quotes[] = [
 ];
 
 $quotes[] = [
-    'quote' => 'quote2 text',
-    'source' => 'person2 name',
-    'citation' => 'this is the citation2',
-    'year' => 'this is the year2'
+    'quote' => 'Whether you think you can, or you think you can’t – you’re right.',
+    'source' => 'Henry Ford',
+    //'citation' => 'this is the citation2',
+    //'year' => 'this is the year2'
 ];
 
 $quotes[] = [
-    'quote' => 'quote3 text',
-    'source' => 'person3 name',
-    'citation' => 'this is the citation3',
-    'year' => 'this is the year3'
+    'quote' => 'Be kind, for everyone you meet is fighting a hard battle.',
+    'source' => 'Ian Maclaren', //source: wikipedia
+    //'citation' => 'this is the citation3',
+    //'year' => 'this is the year3'
 ];
 
 $quotes[] = [
-    'quote' => 'quote4 text',
-    'source' => 'person4 name',
-    'citation' => 'this is the citation4',
-    'year' => 'this is the year4'
+    'quote' => 'Shake n bake.',
+    'source' => 'Ricky Bobby',
+    //'citation' => 'this is the citation4',
+    //'year' => 'this is the year4'
 ];
 
 $quotes[] = [
-    'quote' => 'quote5 text',
-    'source' => 'person5 name',
-    'citation' => 'this is the citation5',
-    'year' => 'this is the year5'
+    'quote' => 'One of the most difficult things is not to change society - but to change yourself.',
+    'source' => 'Nelson Mandela',
+    //'citation' => 'this is the citation5',
+    //'year' => 'this is the year5'
 ];
 
 // *Create the getRandomQuote function and name it getRandomQuote
 
 function getRandomQuote (){
-  return rand(0, 4);
-};
-
-$random = getRandomQuote();
-
-// $randomQuote = getRandomQuote();
-
+  global $quotes;
+  $random = rand(0, 4);
+  return $quotes[$random];
+}
+$displayQuote = getRandomQuote();
 
 // *Create the printQuote funtion and name it printQuote
 
-echo $random;
+function printQuote (){
+  global $displayQuote;
+  $mainQuote = '<p class="quote">' . $displayQuote['quote'] . '</p>' . '<p class="quote">' . $displayQuote['source'] . '</p>';
+  //return $displayQuote['quote'] . " " . $displayQuote['source'];
+  return $mainQuote;
+}
 
+$onScreen = printQuote();
+echo $onScreen;
 ?>
