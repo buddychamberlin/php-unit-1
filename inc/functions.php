@@ -20,14 +20,14 @@ $quotes[] = [
 $quotes[] = [
     'quote' => 'Be kind, for everyone you meet is fighting a hard battle.',
     'source' => 'Ian Maclaren', //source: wikipedia
-    'citation' => 'Himself',
+    //'citation' => 'Himself',
     //'year' => 'this is the year'
 ];
 
 $quotes[] = [
-    'quote' => 'Shake n bake.',
+    'quote' => "Shake 'n bake.",
     'source' => 'Ricky Bobby',
-    //'citation' => 'this is the citation',
+    'citation' => 'Talladega Nights',
     'year' => '2006'
 ];
 
@@ -45,11 +45,18 @@ $quotes[] = [
     'year' => '2019'
 ];
 
+$quotes[] = [
+    'quote' => 'Get busy living, or get busy dying',
+    'source' => 'Ellis Boy "Red" Redding',
+    'citation' => "The Shawshank Redemption",
+    'year' => '1994'
+];
+
 // *Create the getRandomQuote function and name it getRandomQuote
 
 function getRandomQuote (){
   global $quotes;
-  $random = rand(0, 4);
+  $random = rand(0, 6);
   return $quotes[$random];
 }
 $displayQuote = getRandomQuote();
